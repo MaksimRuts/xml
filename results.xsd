@@ -27,6 +27,11 @@
     <xsd:complexType name="Test">
         <xsd:attribute name="name" type="xsd:string" use="required"/>
         <xsd:attribute name="date" type="xsd:date" use="required"/>
-        <xsd:attribute name="mark" type="xsd:double" use="required"/>
+        <xsd:attribute name="mark" type="Mark" use="required"/>
     </xsd:complexType>
+    <xsd:simpleType name="Mark">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[0-9][\\.][0-9]"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 </xsd:schema>
